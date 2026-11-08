@@ -1,0 +1,40 @@
+[package]
+name = "mijialan-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "mijialan-rust"
+path = "src/main.rs"
+
+[dependencies]
+mijialan-core.workspace = true
+mijialan-homekit.workspace = true
+anyhow.workspace = true
+serde_json.workspace = true
+gpui = "=0.2.2"
+gpui-component = "=0.5.1"
+gpui-component-assets = "=0.5.1"
+qrcode = { version = "0.14", default-features = false, features = ["svg"] }
+tray-icon = { version = "=0.26.1", default-features = false, features = ["ksni"] }
+async-channel = "2.5"
+base64 = "0.22"
+raw-window-handle = "0.6"
+
+[build-dependencies]
+embed-resource = "=3.0.12"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "=0.61.3", features = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_UI_HiDpi", "Win32_UI_WindowsAndMessaging"] }
+# Portable Debug builds must embed the component icons instead of loading
+# their SVGs from the build machine's Cargo registry at runtime.
+rust-embed = { version = "=8.13.0", features = ["debug-embed"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = "0.3.2"
+objc2-foundation = "0.3.2"
+block2 = "0.6"
+# GPUI disables raster SVG images by default; runtime SF Symbol alpha masks embed PNG data.
+resvg = { version = "0.45.1", default-features = false, features = ["raster-images"] }

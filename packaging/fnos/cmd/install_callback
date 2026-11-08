@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+umask 077
+mkdir -p "${TRIM_PKGVAR}/data"
+if [ ! -f "${TRIM_PKGVAR}/data/credentials.enc" ]; then
+    printf '%s' "${wizard_admin_password:-12345}" > "${TRIM_PKGVAR}/initial-password"
+fi
+printf '%s' "${wizard_api_access:-disabled}" > "${TRIM_PKGVAR}/api-access"

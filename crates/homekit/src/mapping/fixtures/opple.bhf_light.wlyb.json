@@ -1,0 +1,303 @@
+{
+  "actions": [],
+  "compatibility": [
+    {
+      "description": "停止工作",
+      "description_en": "Stop Working",
+      "id": "a:4:1",
+      "is_action": true,
+      "name": "stop-working",
+      "reason": "unavailable_operation",
+      "service": "ptc-bath-heater"
+    }
+  ],
+  "kind": "bath-heater",
+  "properties": [
+    {
+      "choices": [],
+      "description": "照明",
+      "description_en": "Switch Status",
+      "format": "bool",
+      "name": "on",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "light",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "温度",
+      "description_en": "Temperature",
+      "format": "uint8",
+      "name": "temperature",
+      "piid": 5,
+      "range": [
+        0.0,
+        100.0,
+        1.0
+      ],
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "celsius",
+      "writable": false
+    },
+    {
+      "choices": [],
+      "description": "换气",
+      "description_en": "Ventilation",
+      "format": "bool",
+      "name": "ventilation",
+      "piid": 9,
+      "range": null,
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "取暖",
+      "description_en": "Heating",
+      "format": "bool",
+      "name": "heating",
+      "piid": 10,
+      "range": null,
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "吹风",
+      "description_en": "Blow",
+      "format": "bool",
+      "name": "blow",
+      "piid": 11,
+      "range": null,
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "干燥功能",
+      "description_en": "Dryer",
+      "format": "bool",
+      "name": "dryer",
+      "piid": 12,
+      "range": null,
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [
+        {
+          "description": "No Faults",
+          "description_en": "No Faults",
+          "value": 0
+        },
+        {
+          "description": "温度传感器故障",
+          "description_en": "F1",
+          "value": 255
+        },
+        {
+          "description": "电机故障",
+          "description_en": "F2",
+          "value": 241
+        }
+      ],
+      "description": "故障",
+      "description_en": "Device Fault",
+      "format": "uint8",
+      "name": "fault",
+      "piid": 13,
+      "range": null,
+      "readable": true,
+      "service": "ptc-bath-heater",
+      "siid": 4,
+      "unit": "",
+      "writable": false
+    },
+    {
+      "choices": [
+        {
+          "description": "一档",
+          "description_en": "Level1",
+          "value": 1
+        },
+        {
+          "description": "二档",
+          "description_en": "Level2",
+          "value": 2
+        },
+        {
+          "description": "三档",
+          "description_en": "Level3",
+          "value": 3
+        },
+        {
+          "description": "四档",
+          "description_en": "Level4",
+          "value": 4
+        },
+        {
+          "description": "五档",
+          "description_en": "Level5",
+          "value": 5
+        }
+      ],
+      "description": "风机档位",
+      "description_en": "Fan Level",
+      "format": "uint8",
+      "name": "fan-level",
+      "piid": 2,
+      "range": null,
+      "readable": true,
+      "service": "fan-control",
+      "siid": 5,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "左右摆风",
+      "description_en": "Horizontal Swing",
+      "format": "bool",
+      "name": "horizontal-swing",
+      "piid": 3,
+      "range": null,
+      "readable": true,
+      "service": "fan-control",
+      "siid": 5,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "小夜灯",
+      "description_en": "",
+      "format": "bool",
+      "name": "night",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [
+        {
+          "description": "15 Min",
+          "description_en": "15 Min",
+          "value": 0
+        },
+        {
+          "description": "30 Min",
+          "description_en": "30 Min",
+          "value": 1
+        },
+        {
+          "description": "45 Min",
+          "description_en": "45 Min",
+          "value": 2
+        },
+        {
+          "description": "60 Min",
+          "description_en": "60 Min",
+          "value": 3
+        },
+        {
+          "description": "120 Min",
+          "description_en": "120 Min",
+          "value": 4
+        },
+        {
+          "description": "360 Min",
+          "description_en": "360 Min",
+          "value": 5
+        },
+        {
+          "description": "Null",
+          "description_en": "Null",
+          "value": 100
+        }
+      ],
+      "description": "定时",
+      "description_en": "time",
+      "format": "uint8",
+      "name": "time",
+      "piid": 2,
+      "range": null,
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "智能沐浴",
+      "description_en": "",
+      "format": "bool",
+      "name": "smartbath",
+      "piid": 4,
+      "range": null,
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "class-sku",
+      "description_en": "sku",
+      "format": "uint32",
+      "name": "sku",
+      "piid": 6,
+      "range": [
+        1179740.0,
+        1179746.0,
+        1.0
+      ],
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": false
+    },
+    {
+      "choices": [],
+      "description": "温度设置",
+      "description_en": "",
+      "format": "uint8",
+      "name": "temp",
+      "piid": 7,
+      "range": [
+        32.0,
+        42.0,
+        1.0
+      ],
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": true
+    }
+  ]
+}

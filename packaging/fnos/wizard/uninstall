@@ -1,0 +1,23 @@
+[
+  {
+    "stepTitle": "应用数据",
+    "items": [
+      {
+        "type": "select",
+        "field": "wizard_remove_data",
+        "label": "是否删除数据",
+        "initValue": "keep",
+        "options": [
+          {
+            "label": "保留账号、设备与 HomeKit 配对",
+            "value": "keep"
+          },
+          {
+            "label": "删除全部应用数据",
+            "value": "delete"
+          }
+        ]
+      }
+    ]
+  }
+]

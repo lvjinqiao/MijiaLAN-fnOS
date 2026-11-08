@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=MijiaLAN Rust
+Name[zh_CN]=米家局域网桥
+Comment=Control Mijia devices over LAN and bridge them to Apple Home
+Comment[zh_CN]=局域网控制米家设备并桥接到 Apple 家庭
+Exec=mijialan-rust
+Icon=mijialan-rust
+Terminal=false
+Categories=Utility;Network;
+StartupNotify=true

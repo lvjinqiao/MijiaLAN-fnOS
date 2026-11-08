@@ -1,0 +1,46 @@
+#!/bin/bash
+set -eu
+umask 077
+: "${TRIM_PKGVAR:?}" "${TRIM_APPDEST:?}"
+PID_FILE="${TRIM_PKGVAR}/app.pid"
+BIN="$(readlink -f "${TRIM_APPDEST}/bin/mijialan-daemon")"
+status() {
+    [ -f "$PID_FILE" ] || return 1
+    pid=$(cat "$PID_FILE")
+    case "$pid" in ''|*[!0-9]*) return 1;; esac
+    [ "$(readlink "/proc/$pid/exe" 2>/dev/null)" = "$BIN" ] && kill -0 "$pid" 2>/dev/null
+}
+case "${1:-}" in
+start)
+    if status; then exit 0; fi
+    mkdir -p "${TRIM_PKGVAR}/data"
+    chmod 700 "${TRIM_PKGVAR}/data"
+    export MIJIALAN_DATA_DIR="${TRIM_PKGVAR}/data"
+    export MIJIALAN_SOCKET="${TRIM_APPDEST}/app.sock"
+    if [ -f "${TRIM_PKGVAR}/initial-password" ]; then
+        MIJIALAN_ADMIN_TOKEN=$(cat "${TRIM_PKGVAR}/initial-password")
+        export MIJIALAN_ADMIN_TOKEN
+    fi
+    if [ -S "$MIJIALAN_SOCKET" ]; then rm -- "$MIJIALAN_SOCKET"; fi
+    if [ -f "${TRIM_PKGVAR}/api-access" ] && [ "$(cat "${TRIM_PKGVAR}/api-access")" = enabled ]; then
+        export MIJIALAN_EXTRA_LISTEN=0.0.0.0:8787
+    fi
+    # Socket is reachable only through the fnOS gateway; API also requires the app password.
+    "$BIN" >> "${TRIM_PKGVAR}/service.log" 2>&1 &
+    echo "$!" > "$PID_FILE"
+    sleep 2
+    status || exit 1
+    # The daemon now holds the token in its encrypted vault.
+    rm -f -- "${TRIM_PKGVAR}/initial-password"
+    ;;
+stop)
+    if status; then
+        kill -TERM "$pid"
+        for i in {1..15}; do if ! status; then break; fi; sleep 1; done
+        if status; then kill -KILL "$pid"; fi
+    fi
+    rm -f -- "$PID_FILE"
+    ;;
+status) if status; then exit 0; else exit 3; fi;;
+*) exit 1;;
+esac

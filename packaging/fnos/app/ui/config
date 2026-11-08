@@ -1,0 +1,14 @@
+{
+  ".url": {
+    "mijialan.main": {
+      "title": "MijiaLAN",
+      "icon": "images/icon_{0}.png",
+      "type": "iframe",
+      "protocol": "",
+      "gatewayPrefix": "/app/mijialan",
+      "gatewaySocket": "app.sock",
+      "url": "/app/mijialan/",
+      "allUsers": false
+    }
+  }
+}

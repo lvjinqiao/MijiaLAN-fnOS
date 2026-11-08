@@ -1,0 +1,39 @@
+[
+  {
+    "stepTitle": "设置设备桥",
+    "items": [
+      {
+        "type": "password",
+        "field": "wizard_admin_password",
+        "label": "管理密码",
+        "rules": [
+          {
+            "required": true,
+            "message": "请设置管理密码"
+          }
+        ],
+        "initValue": "12345"
+      },
+      {
+        "type": "select",
+        "field": "wizard_api_access",
+        "label": "局域网脚本 API（8787 端口）",
+        "initValue": "disabled",
+        "options": [
+          {
+            "label": "关闭，仅通过飞牛页面管理",
+            "value": "disabled"
+          },
+          {
+            "label": "开启，使用管理密码认证",
+            "value": "enabled"
+          }
+        ]
+      },
+      {
+        "type": "tips",
+        "helpText": "原生 x86_64 测试版，无需 Docker。米家云与 HomeKit 需在安装后登录、配对并验证。"
+      }
+    ]
+  }
+]

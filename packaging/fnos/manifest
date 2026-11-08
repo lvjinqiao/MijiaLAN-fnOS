@@ -1,0 +1,10 @@
+appname = mijialan
+version = 0.1.1
+display_name = MijiaLAN
+desc = 原生米家与 HomeKit 设备桥，支持 WOL、Ping 和 HTTP API 自定义设备。开发测试版，真实设备兼容性需验证。
+platform = x86
+source = thirdparty
+maintainer = Personal Build
+distributor = Personal Build
+desktop_uidir = ui
+desktop_applaunchname = mijialan.main

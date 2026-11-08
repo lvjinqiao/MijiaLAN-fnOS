@@ -1,0 +1,21 @@
+[package]
+name = "mijialan-daemon"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+mijialan-core.workspace = true
+mijialan-homekit.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+tiny_http = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls-native-roots"] }
+rand = "0.8"
+hex = "0.4"
+qrcode = "0.14"
+ctrlc = { version = "3.4", features = ["termination"] }
+serde_yaml = "0.9"
+sha2 = "0.10"
+base64 = "0.22"

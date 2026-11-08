@@ -1,0 +1,12 @@
+MijiaLAN (Rust client)
+
+Extract the complete ZIP, then run mijialan-rust.exe for the tray client.
+mijia-rust.exe is the command-line tool. The --demo option only controls simulated devices.
+
+This x64 MSVC package requires the Microsoft Visual C++ v14 x64 runtime.
+If Windows reports VCRUNTIME140.dll is missing, use the official Microsoft installer:
+https://aka.ms/vc14/vc_redist.x64.exe
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist/
+
+This experience package is not Authenticode signed.
+Source and release notes: https://github.com/iPocket-APP/MijiaLAN/tree/MijiaLAN-rs

@@ -1,0 +1,180 @@
+{
+  "actions": [],
+  "compatibility": [
+    {
+      "description": "开关状态切换",
+      "description_en": "Toggle",
+      "id": "a:3:1",
+      "is_action": true,
+      "name": "toggle",
+      "reason": "unavailable_operation",
+      "service": "light"
+    },
+    {
+      "description": "yincang",
+      "description_en": "yincang",
+      "id": "a:6:2",
+      "is_action": true,
+      "name": "yincang",
+      "reason": "unavailable_operation",
+      "service": "custom"
+    }
+  ],
+  "kind": "airer",
+  "properties": [
+    {
+      "choices": [
+        {
+          "description": "无故障",
+          "description_en": " No Faults",
+          "value": 0
+        }
+      ],
+      "description": "故障",
+      "description_en": "Device Fault",
+      "format": "uint32",
+      "name": "fault",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "airer",
+      "siid": 2,
+      "unit": "",
+      "writable": false
+    },
+    {
+      "choices": [
+        {
+          "description": "停止",
+          "description_en": "Stop",
+          "value": 1
+        },
+        {
+          "description": "上升中",
+          "description_en": "Rising",
+          "value": 0
+        },
+        {
+          "description": "下降中",
+          "description_en": "Down",
+          "value": 2
+        }
+      ],
+      "description": "工作状态",
+      "description_en": "Status",
+      "format": "uint8",
+      "name": "status",
+      "piid": 2,
+      "range": null,
+      "readable": true,
+      "service": "airer",
+      "siid": 2,
+      "unit": "",
+      "writable": false
+    },
+    {
+      "choices": [
+        {
+          "description": "上升",
+          "description_en": "Up",
+          "value": 0
+        },
+        {
+          "description": "停止",
+          "description_en": "Pause",
+          "value": 1
+        },
+        {
+          "description": "下降",
+          "description_en": "Down",
+          "value": 2
+        }
+      ],
+      "description": "电机控制",
+      "description_en": "Motor Control",
+      "format": "uint8",
+      "name": "motor-control",
+      "piid": 5,
+      "range": null,
+      "readable": false,
+      "service": "airer",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "杀菌",
+      "description_en": "UV",
+      "format": "bool",
+      "name": "uv",
+      "piid": 15,
+      "range": null,
+      "readable": true,
+      "service": "airer",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "风干功能",
+      "description_en": "Dryer",
+      "format": "bool",
+      "name": "dryer",
+      "piid": 17,
+      "range": null,
+      "readable": true,
+      "service": "airer",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "照明",
+      "description_en": "Switch Status",
+      "format": "bool",
+      "name": "on",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "light",
+      "siid": 3,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "type",
+      "description_en": "device-type",
+      "format": "uint8",
+      "name": "device-type",
+      "piid": 1,
+      "range": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": false
+    },
+    {
+      "choices": [],
+      "description": "烘干功能",
+      "description_en": "",
+      "format": "bool",
+      "name": "dryer",
+      "piid": 3,
+      "range": null,
+      "readable": true,
+      "service": "custom",
+      "siid": 6,
+      "unit": "",
+      "writable": true
+    }
+  ]
+}

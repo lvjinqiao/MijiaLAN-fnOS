@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eu
+if [ -z "${wizard_admin_password:-12345}" ]; then
+    echo "管理密码不能为空" > "${TRIM_TEMP_LOGFILE}"
+    exit 1
+fi

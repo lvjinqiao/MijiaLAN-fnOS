@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+if [ "${wizard_remove_data:-keep}" = "delete" ]; then
+    : "${TRIM_PKGVAR:?}"
+    [ "$TRIM_PKGVAR" != / ] || exit 1
+    rm -rf -- "${TRIM_PKGVAR}/data"
+    rm -f -- "${TRIM_PKGVAR}/initial-password" "${TRIM_PKGVAR}/service.log" "${TRIM_PKGVAR}/app.pid" "${TRIM_PKGVAR}/api-access"
+fi

@@ -1,0 +1,188 @@
+{
+  "actions": [],
+  "compatibility": [
+    {
+      "description": "开关状态切换",
+      "description_en": "Toggle",
+      "id": "a:2:1",
+      "is_action": true,
+      "name": "toggle",
+      "reason": "power_switch",
+      "service": "fan"
+    }
+  ],
+  "kind": "fan",
+  "properties": [
+    {
+      "choices": [],
+      "description": "开关",
+      "description_en": "Switch Status",
+      "format": "bool",
+      "name": "on",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [
+        {
+          "description": "一挡",
+          "description_en": "Level1",
+          "value": 1
+        },
+        {
+          "description": "二挡",
+          "description_en": "Level2",
+          "value": 2
+        },
+        {
+          "description": "三挡",
+          "description_en": "Level3",
+          "value": 3
+        }
+      ],
+      "description": "风机档位",
+      "description_en": "Fan Level",
+      "format": "uint8",
+      "name": "fan-level",
+      "piid": 2,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "none",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "左右摆风",
+      "description_en": "Horizontal Swing",
+      "format": "bool",
+      "name": "horizontal-swing",
+      "piid": 3,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [
+        {
+          "description": "直吹风",
+          "description_en": "Straight Wind",
+          "value": 0
+        },
+        {
+          "description": "睡眠风",
+          "description_en": "Sleep",
+          "value": 1
+        }
+      ],
+      "description": "模式",
+      "description_en": "Mode",
+      "format": "uint8",
+      "name": "mode",
+      "piid": 7,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "none",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "关机延时时间",
+      "description_en": "Power Off Delay Time",
+      "format": "uint16",
+      "name": "off-delay-time",
+      "piid": 10,
+      "range": [
+        0.0,
+        480.0,
+        1.0
+      ],
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "minutes",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "提示音",
+      "description_en": "Alarm",
+      "format": "bool",
+      "name": "alarm",
+      "piid": 11,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "none",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "指示灯",
+      "description_en": "Brightness",
+      "format": "bool",
+      "name": "brightness",
+      "piid": 12,
+      "range": null,
+      "readable": true,
+      "service": "fan",
+      "siid": 2,
+      "unit": "none",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "物理控制锁",
+      "description_en": "Physical Control Locked",
+      "format": "bool",
+      "name": "physical-controls-locked",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "physical-controls-locked",
+      "siid": 3,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "提示音",
+      "description_en": "Alarm",
+      "format": "bool",
+      "name": "alarm",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "alarm",
+      "siid": 4,
+      "unit": "",
+      "writable": true
+    },
+    {
+      "choices": [],
+      "description": "开关",
+      "description_en": "Switch Status",
+      "format": "bool",
+      "name": "on",
+      "piid": 1,
+      "range": null,
+      "readable": true,
+      "service": "indicator-light",
+      "siid": 5,
+      "unit": "",
+      "writable": true
+    }
+  ]
+}
